@@ -28,6 +28,11 @@ trait Pair<K> {
     fn claimFees(ref self: K) -> (u256,u256);
 }
 
+#[starknet::interface]
+trait IXoroshiro<TContractStorage> {
+    fn next(ref self: TContractStorage) -> u128;
+}
+
 //Contract Interface
 #[starknet::interface]
 trait IStarkiProtocol<TContractState> {
